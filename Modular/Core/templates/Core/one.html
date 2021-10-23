@@ -1,0 +1,142 @@
+{% extends 'Core/Base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Start Body -->
+    <div class="row section">
+        <h2 class="PageName">Dashboard</h2>
+        <div class="row">
+
+            <div class="row FirstSection">
+                <div class="col col-md-5">
+                    <h3 style="background:royalblue">Employees Attendance</h3>
+                    <div>
+                        <canvas id="LineChart" style="width:100%;height: 212px;"></canvas>
+                    </div>
+                </div>
+                <div class="col col-md-3">
+                    <h3 style="background:#096f64">Clients</h3>
+                    <div><a href="#"><span class="fa fa-users">&nbsp;</span>&nbsp;Total: &nbsp; 30</a></div>
+                    <div><a href="#"><span class="fa fa-user"></span>&nbsp;Active: &nbsp; 30</a></div>
+                    <div><a href="#"><span class="fa fa-user-check"></span>&nbsp;Paid: &nbsp; 30</a></div>
+                    <div><a href="#"><span class="fa fa-user-times"></span>&nbsp;Unpaid: &nbsp; 30</a></div>
+                </div>
+                <div class="col col-md-4">
+                    <h3 style="background-color: #3700b3;">Products</h3>
+                    <div><a href="#"><span class="fa fa-cubes"></span>&nbsp; Total: &nbsp; 30</a></div>
+                    <div><a href="#"><span class="fa fa-cube"></span>&nbsp;Most: &nbsp; {{ name }}</a></div>
+                    <div><a href="#"><span class="fa fa-box"></span>&nbsp;Least: &nbsp; {{ name }}</a></div>
+                    <div><a href="#"><span class="fa fa-box-open"></span>&nbsp;Empty: &nbsp; {{ name }}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row MiddleSection" style="margin-top: 25px;">
+                <div class="col col-md-4">
+                    <h3 style="background:#f44336">Area Distibution</h3>
+                    <div>
+                        <canvas id="PieChart" width="100%" height="100%"></canvas>
+                    </div>
+                </div>
+                <div class="col col-md-8">
+                    <h3>Employees Perfomance</h3>
+                    <div>
+                        <canvas id="BarChart" width="100%" height="42px"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row lastSection">
+                <div class="col col-md-5">
+                    <h3 style="background:#096f64">Employees</h3>
+                    <table class="table bg-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                        <tbody>
+                        <tr>
+                            <td>FN-0001</td>
+                            <td>Khan</td>
+                            <td>4:33pm</td>
+                            <td>Present</td>
+                        </tr>
+                        <tr>
+                            <td>FN-0001</td>
+                            <td>Asad</td>
+                            <td>4:33pm</td>
+                            <td>Present</td>
+                        </tr>
+                        <tr>
+                            <td>FN-0001</td>
+                            <td>Shahzain</td>
+                            <td>4:33pm</td>
+                            <td>Present</td>
+                        </tr>
+                        <tr>
+                            <td>FN-0001</td>
+                            <td>Farooq</td>
+                            <td>4:33pm</td>
+                            <td>Present</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col col-md-7">
+                    <h3 style="background-color: #3700b3;">Tasks</h3>
+                    <table class="table bg-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Assigned To</th>
+                            <th>Status</th>
+                            <th>Update/Delete</th>
+                        </tr>
+                        <tbody>
+                        <tr>
+                            <td>TK-0346</td>
+                            <td>Collect Bill</td>
+                            <td>Khan</td>
+                            <td><input type="checkbox"></td>
+                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
+                                    class="fa fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td>TK-0346</td>
+                            <td>Collect Bill</td>
+                            <td>Khan</td>
+                            <td><input type="checkbox"></td>
+                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
+                                    class="fa fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td>TK-0346</td>
+                            <td>Collect Bill</td>
+                            <td>Khan</td>
+                            <td><input type="checkbox"></td>
+                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
+                                    class="fa fa-trash-alt"></a></td>
+                        </tr>
+                        <tr>
+                            <td>TK-0346</td>
+                            <td>Collect Bill</td>
+                            <td>Khan</td>
+                            <td><input type="checkbox"></td>
+                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
+                                    class="fa fa-trash-alt"></a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Body -->
+
+{% endblock %}
+

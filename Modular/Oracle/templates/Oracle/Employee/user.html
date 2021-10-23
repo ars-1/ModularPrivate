@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.css">
+</head>
+<script type="text/javascript" src="assets/fontawesome-free-5.15.4-web/js/all.js"></script>
+
+<body>
+
+
+    <div>
+        <div class="row">
+            <div class="col-2 nav" id="sideNa">
+                <div class="row" id="sideNav">
+                    <a href="one.html"><span class="fa fa-tachometer-alt"></span>&nbsp; &nbsp;Dashboard</a>
+                    <a href="#"><span class="fa fa-id-card"></span>&nbsp; &nbsp;Employees</a>
+                    <a><span class="fa fa-dolly-flatbed"></span>&nbsp; &nbsp;Inventory</a>
+                    <a><span class="fa fa-address-book"></span>&nbsp; &nbsp;Client List</a>
+                    <a><span class="fa fa-money-bill-alt"></span>&nbsp; &nbsp;Billing List</a>
+                    <a><span class="fa fa-thumbtack"></span>&nbsp; &nbsp;Task Manager</a>
+                    <a><span class="fa fa-headset"></span>&nbsp; &nbsp;Support</a>
+                    <a><span class="fa fa-chalkboard-teacher"></span>&nbsp; &nbsp;Contact</a>
+                </div>
+            </div>
+
+            <div class="col-10 body">
+                <div class="row">
+                    <nav>
+                        <h1 style="float:left;" class="BrandName">
+                            TechHouse
+                        </h1>
+                        <div style="float:right;display:flex;" class="topNav">
+                            <form class="d-flex">
+                                <input type="search" class="form-control me-2" placeholder="Search">
+                                <button class="fa fa-search"></button>
+                            </form>
+                            &nbsp; &nbsp;
+                            <a href="#" onclick="toggleTwo()" class="fa fa-bell">
+
+                            </a>
+                            &nbsp; &nbsp;
+                            <div class="ul" id="TwoData" style="width:20%">
+                                <li><a>Everyone is deleted</a></li>
+                                <li><a>You added someone?</a></li>
+                                <li><a>You have been compromised</a></li>
+                                <li><a>You have been compromised</a></li>
+                            </div>
+                            <a href="#" onclick="toggleThree()" class="fa fa-user">
+                            </a>
+                            <div class="ul" id="ThreeData">
+                                <li><a>UserName</a></li>
+                                <li><a>Logout</a></li>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Start Body -->
+                <div class="row sectionC">
+                    <h3>User Profile</h3>
+                    <div class="col-md-14">
+                        <div class="row insideSectionC">
+                            <div class="col col-md-6 sectionCA">
+                                <h3>Personnal Information:</h3>
+                                <div class="box-sectionC">
+
+                                    <div class="row">
+                                        <div class="col col-md-3">
+                                            <div class="row heading">
+                                               First Name
+                                            </div>
+                                            <div class="row info">
+                                                Ali
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-3">
+                                            <div class="row heading">
+                                                Last Name
+                                            </div>
+                                            <div class="row info">
+                                                Khan
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-4">
+                                            <div class="row heading">
+                                                Mobile
+                                            </div>
+                                            <div class="row info">
+                                                +92 306 5439298
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-md-4">
+                                            <div class="row heading">
+                                               CNIC
+                                            </div>
+                                            <div class="row info">
+                                                36202-2688132-7
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-6">
+                                            <div class="row heading">
+                                                Email
+                                            </div>
+                                            <div class="row info">
+                                                someone@example.com
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-md-10">
+                                            <div class="row heading">
+                                               Address
+                                            </div>
+                                            <div class="row info">
+                                                House #25, Street #34, Allama Iqbal Town
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-md-3">
+                                            <div class="row heading">
+                                               Country
+                                            </div>
+                                            <div class="row info">
+                                                Pakistan
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-3">
+                                            <div class="row heading">
+                                                City
+                                            </div>
+                                            <div class="row info">
+                                                Lahore
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-4">
+                                            <div class="row heading">
+                                                Postal Code
+                                            </div>
+                                            <div class="row info">
+                                                54000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-md-5">
+                                            <div class="row heading">
+                                               Basic Salary
+                                            </div>
+                                            <div class="row info">
+                                                25,000/- pkr
+                                            </div>
+                                        </div>
+                                        <div class="col col-md-5">
+                                            <div class="row heading">
+                                                Department
+                                            </div>
+                                            <div class="row info">
+                                                I.T Department
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-md-10">
+                                            <div class="row heading">
+                                               Designation / Post
+                                            </div>
+                                            <div class="row info">
+                                                Superman
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-md-10">
+                                            <button class="btn btn-primary">Update</button>
+                                            <button class="btn btn-danger">Delete</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col col-md-4 sectionCB">
+
+                                <div class="row ImageContainer">
+                                     <img src="assets/images/treeOne.jpg">
+                                </div>
+                                <hr>
+                                <br>
+                                <h3>Attendance Count</h3>
+                                <div class="row">
+                                    <div class="col col-md-4">
+                                        <div class="row heading">
+                                            Presents
+                                        </div>
+                                        <div class="row info">
+                                            30
+                                        </div>
+                                    </div>
+                                    <div class="col col-md-4">
+                                        <div class="row heading">
+                                            Absents
+                                        </div>
+                                        <div class="row info">
+                                            30
+                                        </div>
+                                    </div>
+                                    <div class="col col-md-4">
+                                        <div class="row heading">
+                                            HalfTime
+                                        </div>
+                                        <div class="row info">
+                                            30
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md-4">
+                                        <div class="row heading">
+                                            Leaves
+                                        </div>
+                                        <div class="row info">
+                                            30
+                                        </div>
+                                    </div>
+                                    <div class="col col-md-4">
+                                        <div class="row heading">
+                                            Advance
+                                        </div>
+                                        <div class="row info">
+                                            30
+                                        </div>
+                                    </div>
+                                    <div class="col col-md-4">
+                                        <div class="row heading">
+                                            &nbsp; Salary
+                                        </div>
+                                        <div class="row info">
+                                            30
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="row">
+                                    <div class="col col-md-12">
+                                        <button class="btn btn-success">Print</button>
+                                        <a>&nbsp;</a>
+                                        <button class="btn btn-info">Report</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row insideSectionC">
+                            <div class="col col-md-10 sectionCD">
+                                <table class="table">
+                                    <tr class="heading">
+                                        <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
+                                        <th><h3>Heading</h3></th>
+                                        <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                        <th>Update / Delete</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ali</td>
+                                            <td>2/4/21</td>
+                                            <td>4:43pm</td>
+                                            <td>Present</td>
+                                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class="fa fa-trash-alt"></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End Body -->
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js" async defer></script>
+    <script type="text/javascript" src="assets/js/charts.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+</body>
+
+</html>

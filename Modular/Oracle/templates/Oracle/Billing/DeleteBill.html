@@ -1,0 +1,33 @@
+{% extends 'Core/Base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+
+        <div class="col-md-4 card" style="backdrop-filter: blur(8px); background:rgba(200, 200, 200, 0.1);">
+            <div class="card-header" style="text-align: center">
+                <h3>Designation</h3>
+            </div>
+            <div class="card-body" style="padding: 60px;">
+                <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                    <p>Are You Sure You Want To Delete Bill For {{ bill.datestamp }} of {{ bill.client.username }}?</p>
+
+                    <br><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/oracle/clients/" class="btn btn-danger">Cancel</a>
+
+            </form>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+        </div>
+    </div>
+
+{% endblock %}

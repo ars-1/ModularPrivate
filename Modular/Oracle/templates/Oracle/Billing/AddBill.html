@@ -1,0 +1,77 @@
+{% extends 'Core/Base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-6 card" style="backdrop-filter: blur(8px); background:rgba(200, 200, 200, 0.1);">
+            <div class="card-header" style="text-align: center">
+                <h3>Designation</h3>
+            </div>
+            <div class="card-body" style="padding: 60px;">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <label>Client: &nbsp;</label>
+                    <select name="client" id="id_client" disabled>
+                        {% for client in form.client %}
+                            {{ client }}
+                        {% endfor %}
+                    </select>
+                    <br><br>
+
+                    <label>Monthly Bill:</label>
+                    <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                    <label>Collected Bill:</label>
+                    <br>
+                    <input type="text" value="{{ client.bill }}" readonly id="id_bill">
+                    <span>&nbsp; &nbsp;</span>
+                    <input type="number" name="billA" id="id_billA" value="0">
+
+                    <br><br>
+                    <label>Due Amount:</label>
+                    <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                    <label>Discount:</label>
+                    <br>
+                    <input type="number" name="due" id="id_due" value="0" readonly>
+                    <span>&nbsp; &nbsp;</span>
+                    <input type="number" name="discount" id="id_discount" value="0">
+                    <br><br>
+
+                    <label>Employee:</label>
+                    <span>&nbsp; &nbsp; &nbsp;</span>
+                    <label>Date & Time:</label>
+                    <br>
+                    {{ form.employee }}
+                    <span>&nbsp; &nbsp;</span>
+                    {{ form.datestamp }}
+
+                    <br><br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="/oracle/clients/" class="btn btn-danger">Cancel</a>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+        </div>
+    </div>
+
+    <script>
+        document.body.addEventListener('click', fun);
+        let Due = document.getElementById('id_due');
+        let Bill = document.getElementById('id_bill');
+        let BillA = document.getElementById('id_billA');
+        let Discount = document.getElementById('id_discount');
+
+        function fun() {
+            Due.value = Number(Bill.value) - Number(BillA.value) - Number(Discount.value);
+        }
+    </script>
+
+{% endblock %}

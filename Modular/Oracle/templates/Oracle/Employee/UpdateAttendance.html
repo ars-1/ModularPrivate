@@ -1,0 +1,42 @@
+{% extends 'Core/Base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+
+        <div class="col-md-4 card" style="backdrop-filter: blur(8px); background:rgba(200, 200, 200, 0.1);">
+            <div class="card-header" style="text-align: center">
+                <h3>Attendance</h3>
+            </div>
+            <div class="card-body" style="padding: 60px;">
+                <form action="" method="POST">
+                {% csrf_token %}
+
+                    <label>Employee: &nbsp; &nbsp;</label>
+                {{ form.employee }}
+                    <br><br>
+                    <label>Status: &nbsp; &nbsp;</label>
+                {{ form.status }}
+                    <br><br>
+                    <label>Month: &nbsp;</label>
+                {{ form.month }}
+                    <br><br>
+                    <label>Date & Time:</label>
+                {{ form.datestamp }}
+                    <br><br>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a href="/oracle/employees/" class="btn btn-danger">Cancel</a>
+
+            </form>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+        </div>
+    </div>
+
+{% endblock %}

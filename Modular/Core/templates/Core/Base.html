@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fontawesome-free-5.15.4-web/css/all.css' %}">
+</head>
+<script type="text/javascript" src="{% static 'assets/fontawesome-free-5.15.4-web/js/all.js' %}"></script>
+
+<body>
+
+
+    <div>
+        <div class="row">
+            <div class="col-2 nav" id="sideNa">
+                <div class="row" id="sideNav">
+                    <a href="/"><span class="fa fa-tachometer-alt"></span>&nbsp; &nbsp;Dashboard</a>
+                    <a href="/oracle/employees/"><span class="fa fa-id-card"></span>&nbsp; &nbsp;Employees</a>
+                    <a><span class="fa fa-dolly-flatbed"></span>&nbsp; &nbsp;Inventory</a>
+                    <a href="/oracle/clients/"><span class="fa fa-address-book"></span>&nbsp; &nbsp;Client List</a>
+                    <a href="/oracle/billing/"><span class="fa fa-money-bill-alt"></span>&nbsp; &nbsp;Billing List</a>
+                    <a><span class="fa fa-thumbtack"></span>&nbsp; &nbsp;Task Manager</a>
+                    <a><span class="fa fa-headset"></span>&nbsp; &nbsp;Support</a>
+                    <a><span class="fa fa-chalkboard-teacher"></span>&nbsp; &nbsp;Contact</a>
+                </div>
+            </div>
+
+            <div class="col-10 body">
+                <div class="row">
+                    <nav>
+                        <h1 style="float:left;" class="BrandName">
+                            TekHouse
+                        </h1>
+                        <div style="float:right;display:flex;" class="topNav">
+                            <form class="d-flex" method="POST">
+                                <input type="search" class="form-control me-2" placeholder="Search">
+                                <button class="fa fa-search" type="submit"></button>
+                            </form>
+                            &nbsp; &nbsp;
+                            <a href="#" onclick="toggleTwo()" class="fa fa-bell">
+
+                            </a>
+                            &nbsp; &nbsp;
+                            <div class="ul" id="TwoData" style="width:20%">
+                                <li><a>Everyone is deleted</a></li>
+                                <li><a>You added someone?</a></li>
+                                <li><a>You have been compromised</a></li>
+                                <li><a>You have been compromised</a></li>
+                            </div>
+                            <a href="#" onclick="toggleThree()" class="fa fa-user">
+                            </a>
+                            <div class="ul" id="ThreeData">
+                                <li><a>UserName</a></li>
+                                <li><a>Logout</a></li>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+{% block content %}
+
+
+{% endblock %}
+
+               <div class="footer">
+                    <div class="left">
+                        <a href="#">Website</a>
+                        <a>&nbsp;-&nbsp;</a>
+                        <a href="#">Contact</a>
+                        <a>&nbsp;-&nbsp;</a>
+                        <a href="#">Legal</a>
+                    </div>
+                    <div class="right">
+                        <a href="#">Made By TekHouse</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}" async defer></script>
+    <script type="text/javascript" src="{% static 'assets/js/charts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+
+</html>

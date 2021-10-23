@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.css">
+</head>
+<script type="text/javascript" src="assets/fontawesome-free-5.15.4-web/js/all.js"></script>
+
+<body>
+
+
+    <div>
+        <div class="row">
+            <div class="col-2 nav" id="sideNa">
+                <div class="row" id="sideNav">
+                    <a href="one.html"><span class="fa fa-tachometer-alt"></span>&nbsp; &nbsp;Dashboard</a>
+                    <a href="#" class="active"><span class="fa fa-id-card"></span>&nbsp; &nbsp;Employees</a>
+                    <a><span class="fa fa-dolly-flatbed"></span>&nbsp; &nbsp;Inventory</a>
+                    <a><span class="fa fa-address-book"></span>&nbsp; &nbsp;Client List</a>
+                    <a><span class="fa fa-money-bill-alt"></span>&nbsp; &nbsp;Billing List</a>
+                    <a><span class="fa fa-thumbtack"></span>&nbsp; &nbsp;Task Manager</a>
+                    <a><span class="fa fa-headset"></span>&nbsp; &nbsp;Support</a>
+                    <a><span class="fa fa-chalkboard-teacher"></span>&nbsp; &nbsp;Contact</a>
+                </div>
+            </div>
+
+            <div class="col-10 body">
+                <div class="row">
+                    <nav>
+                        <h1 style="float:left;" class="BrandName">
+                            TechHouse
+                        </h1>
+                        <div style="float:right;display:flex;" class="topNav">
+                            <form class="d-flex">
+                                <input type="search" class="form-control me-2" placeholder="Search">
+                                <button class="fa fa-search"></button>
+                            </form>
+                            &nbsp; &nbsp;
+                            <a href="#" onclick="toggleTwo()" class="fa fa-bell">
+                                
+                            </a>
+                            &nbsp; &nbsp;
+                            <div class="ul" id="TwoData" style="width:20%">
+                                <li><a>Everyone is deleted</a></li>
+                                <li><a>You added someone?</a></li>
+                                <li><a>You have been compromised</a></li>
+                                <li><a>You have been compromised</a></li>
+                            </div>
+                            <a href="#" onclick="toggleThree()" class="fa fa-user">
+                            </a>
+                            <div class="ul" id="ThreeData">
+                                <li><a>UserName</a></li>
+                                <li><a>Logout</a></li>
+                            </div>
+                        </div>  
+                    </nav>
+                </div>
+
+                <!-- Start Body -->
+                <div class="row sectionB">
+                    <h2 class="PageName">Table</h2>
+                    <div class="col-md-20">
+
+                        <div class="row">
+                            <div class="col-md-18">
+                                <table class="table bg-special-dark">
+                                    <tr class="heading-table">
+                                        <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
+                                        <th><h2>Heading</h2></th>
+                                        <th>&nbsp;</th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Last Name</th>
+                                        <th>Phone No.</th>
+                                        <th>Salary</th>
+                                        <th>Update/Delete</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>FN-0001</td>
+                                            <td>Khan</td>
+                                            <td>Ali</td>
+                                            <td>+92 305 4307983</td>
+                                            <td>25000/- pkr</td>
+                                            <td>
+                                                <a class="fa fa-pencil-alt"></a>
+                                                &nbsp; &nbsp; &nbsp;
+                                                <a class="fa fa-trash-alt"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FN-0001</td>
+                                            <td>Khan</td>
+                                            <td>Ali</td>
+                                            <td>+92 305 4307983</td>
+                                            <td>25000/- pkr</td>
+                                            <td>
+                                                <a class="fa fa-pencil-alt"></a>
+                                                &nbsp; &nbsp; &nbsp;
+                                                <a class="fa fa-trash-alt"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FN-0001</td>
+                                            <td>Khan</td>
+                                            <td>Ali</td>
+                                            <td>+92 305 4307983</td>
+                                            <td>25000/- pkr</td>
+                                            <td>
+                                                <a class="fa fa-pencil-alt"></a>
+                                                &nbsp; &nbsp; &nbsp;
+                                                <a class="fa fa-trash-alt"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FN-0001</td>
+                                            <td>Khan</td>
+                                            <td>Ali</td>
+                                            <td>+92 305 4307983</td>
+                                            <td>25000/- pkr</td>
+                                            <td>
+                                                <a class="fa fa-pencil-alt"></a>
+                                                &nbsp; &nbsp; &nbsp;
+                                                <a class="fa fa-trash-alt"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FN-0001</td>
+                                            <td>Khan</td>
+                                            <td>Ali</td>
+                                            <td>+92 305 4307983</td>
+                                            <td>25000/- pkr</td>
+                                            <td>
+                                                <a class="fa fa-pencil-alt"></a>
+                                                &nbsp; &nbsp; &nbsp;
+                                                <a class="fa fa-trash-alt"></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FN-0001</td>
+                                            <td>Khan</td>
+                                            <td>Ali</td>
+                                            <td>+92 305 4307983</td>
+                                            <td>25000/- pkr</td>
+                                            <td>
+                                                <a class="fa fa-pencil-alt"></a>
+                                                &nbsp; &nbsp; &nbsp;
+                                                <a class="fa fa-trash-alt"></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-16">
+                            <table class="table bg-special-dark">
+                                <tr class="heading-table">
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th><h2>Attendance</h2></th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Employee</th>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th>Update/Delete</th>
+                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>FN-0001</td>
+                                        <td>Khan</td>
+                                        <td>Ali</td>
+                                        <td>+92 305 4307983</td>
+                                        <td>25000/- pkr</td>
+                                        <td>
+                                            <a class="fa fa-pencil-alt"></a>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <a class="fa fa-trash-alt"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FN-0001</td>
+                                        <td>Khan</td>
+                                        <td>Ali</td>
+                                        <td>+92 305 4307983</td>
+                                        <td>25000/- pkr</td>
+                                        <td>
+                                            <a class="fa fa-pencil-alt"></a>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <a class="fa fa-trash-alt"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FN-0001</td>
+                                        <td>Khan</td>
+                                        <td>Ali</td>
+                                        <td>+92 305 4307983</td>
+                                        <td>25000/- pkr</td>
+                                        <td>
+                                            <a class="fa fa-pencil-alt"></a>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <a class="fa fa-trash-alt"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FN-0001</td>
+                                        <td>Khan</td>
+                                        <td>Ali</td>
+                                        <td>+92 305 4307983</td>
+                                        <td>25000/- pkr</td>
+                                        <td>
+                                            <a class="fa fa-pencil-alt"></a>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <a class="fa fa-trash-alt"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FN-0001</td>
+                                        <td>Khan</td>
+                                        <td>Ali</td>
+                                        <td>+92 305 4307983</td>
+                                        <td>25000/- pkr</td>
+                                        <td>
+                                            <a class="fa fa-pencil-alt"></a>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <a class="fa fa-trash-alt"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FN-0001</td>
+                                        <td>Khan</td>
+                                        <td>Ali</td>
+                                        <td>+92 305 4307983</td>
+                                        <td>25000/- pkr</td>
+                                        <td>
+                                            <a class="fa fa-pencil-alt"></a>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <a class="fa fa-trash-alt"></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- End Body -->
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js" async defer></script>
+    <script type="text/javascript" src="assets/js/charts.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+</body>
+
+</html>

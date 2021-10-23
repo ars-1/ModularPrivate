@@ -1,0 +1,106 @@
+{% extends 'Core/Base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-8 card" style="backdrop-filter: blur(8px); background:rgba(200, 200, 200, 0.1);">
+            <div class="card-header" style="text-align: center">
+                <h3>Designation</h3>
+            </div>
+            <div class="card-body" style="padding: 60px;">
+                <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                    <label>First Name:</label>
+                    {{ form.fname }}
+
+                    <span>&nbsp; &nbsp;</span>
+
+                    <label>Last Name:</label>
+                    {{ form.lname }}
+
+                    <br><br>
+
+                    <label>Mobile:</label>
+                    {{ form.mobile }}
+
+                    <span>&nbsp; &nbsp;</span>
+
+                    <label>CNIC:</label>
+                    {{ form.cnic }}
+
+                    <br><br>
+
+                    <label>Email:</label>
+                    {{ form.email }}
+
+                    <span>&nbsp; &nbsp;</span>
+
+                    <label>Address:</label>
+                    {{ form.address }}
+
+                    <br><br>
+
+                    <label>City:</label>
+                    {{ form.city }}
+
+                    <span>&nbsp; &nbsp;</span>
+
+                    <label>Country:</label>
+                    {{ form.country}}
+
+                    <br><br>
+
+                    <label>Picture:</label>
+                    {{ form.profile_pic }}
+
+                    <br><br>
+
+                    <label>UserName:</label>
+                    {{ form.username }}
+
+                    <span>&nbsp; &nbsp;</span>
+
+                    <label>Password:</label>
+                    {{ form.password }}
+
+                    <br><br>
+
+                    <label>Package:</label>
+                    {{ form.package }}
+
+                    <span>&nbsp; &nbsp;</span>
+
+                    <label>Bill:</label>
+                    {{ form.bill }}
+
+                    <br><br>
+
+                    <label>Router & Wire:</label>
+                    {{ form.router }} {{ form.wire }}
+
+                    <span>&nbsp; &nbsp;</span>
+
+                    <label>Reference:</label>
+                    {{ form.reference }}
+
+                    <br><br>
+
+                    <br><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/oracle/clients/" class="btn btn-danger">Cancel</a>
+
+            </form>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+        </div>
+    </div>
+
+{% endblock %}

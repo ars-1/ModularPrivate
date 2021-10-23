@@ -1,0 +1,151 @@
+{% extends 'Core/Base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Start Body -->
+    <div class="row sectionB">
+        <h2 class="PageName">Employees</h2>
+        <div class="col-md-20">
+
+            <div class="row">
+                <div class="col-md-18">
+                    <table class="table bg-special-dark">
+                        <tr class="heading-table">
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th><h2>Employees List</h2></th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <form method="GET">
+                            <tr class="mid-table">
+                                <td>
+                                    <a href="/oracle/addEmployee/" class="btn btn-info">
+                                        <span class="fa fa-plus"></span>
+                                        &nbsp; Add Employee
+                                    </a>
+                                </td>
+                                <td><input name="fname" type="text" style="width: 80px;" id="id_fname"></td>
+                                <td><input name="lname" type="text" style="width: 80px;" id="id_lname"></td>
+                                <td>{{ empFilter.form.mobile }}</td>
+                                <td>{{ empFilter.form.department }}</td>
+                                <td>
+                                    <button class="btn btn-primary">Search</button>
+                                </td>
+                            </tr>
+                        </form>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>Phone No.</th>
+                            <th>Department</th>
+                            <th>Update/Delete</th>
+                        </tr>
+                        <tbody>
+                        {% for employee in employees %}
+                            <tr>
+                                <td>FN-{{ employee.id|stringformat:"04d" }}</td>
+                                <td><a href="employee/{{ employee.id }}"
+                                       style="text-decoration: none; color: #fff; font-weight: bolder">{{ employee.fname }}</a>
+                                </td>
+                                <td>{{ employee.lname }}</td>
+                                <td>{{ employee.mobile }}</td>
+                                <td>{{ employee.department }}</td>
+                                <td>
+                                    <a href="/oracle/updateEmployee/{{ employee.id }}"><span
+                                            class="fa fa-pencil-alt"></span></a>
+                                    &nbsp; &nbsp; &nbsp;
+                                    <a href="/oracle/deleteEmployee/{{ employee.id }}"><span
+                                            class="fa fa-trash-alt"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-16">
+                <table class="table bg-special-dark">
+                    <tr class="heading-table">
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th><h2>Attendance</h2></th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    <form method="GET">
+                        <tr class="mid-table">
+                            <td>
+                                <a href="/oracle/addAttendance/" class="btn btn-info">
+                                    <span class="fa fa-plus"></span>
+                                    &nbsp; Add Attendance
+                                </a>
+                            </td>
+                            <td>
+                                <select name="employee"  style="width: 80px;" id="id_employee">
+                                    {% for employee in attFilter.form.employee %}{{ employee }}{% endfor %}
+                                </select>
+                            </td>
+                            <td>
+                                <input name="startdate" type="date" style="width: 40px;" id="id_startdate">
+                                <input name="enddate" type="date" style="width: 40px;" id="id_enddate">
+                            </td>
+                            <td>
+                                <select name="month"  style="width: 80px;" id="id_month">
+                                    {% for month in attFilter.form.month %}{{ month }}{% endfor %}
+                                </select>
+                            </td>
+                            <td>
+                                <select name="status"  style="width: 80px;" id="id_status">
+                                    {% for status in attFilter.form.status %}{{ status }}{% endfor %}
+                                </select>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary">Search</button>
+                            </td>
+                        </tr>
+                    </form>
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee</th>
+                        <th>Date Time</th>
+                        <th>Month</th>
+                        <th>Status</th>
+                        <th>Update/Delete</th>
+                    </tr>
+                    <tbody>
+
+                    {% for attendance in attendances %}
+                        <tr>
+                            <td>FN-{{ attendance.employee.id|stringformat:"04d" }} <sub>{{ attendance.id }}</sub></td>
+                            <td>
+                                <a style="text-decoration: none; color: #fff; font-weight: bolder">{{ attendance.employee.fname }}</a>
+                            </td>
+                            <td>{{ attendance.datestamp }}</td>
+                            <td>{{ attendance.month }}</td>
+                            <td>{{ attendance.status }}</td>
+                            <td>
+                                <a href="/oracle/updateAttendance/{{ attendance.id }}"><span
+                                        class="fa fa-pencil-alt"></span></a>
+                                &nbsp; &nbsp; &nbsp;
+                                <a href="/oracle/deleteAttendance/{{ attendance.id }}"><span
+                                        class="fa fa-trash-alt"></span></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Body -->
+{% endblock %}

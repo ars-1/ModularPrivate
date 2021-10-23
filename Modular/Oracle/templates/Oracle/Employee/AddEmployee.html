@@ -1,0 +1,246 @@
+{% extends 'Core/Base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Start Body -->
+    <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="row sectionC">
+            <h3>User Profile</h3>
+            <div class="col-md-14">
+                <div class="row insideSectionC">
+                    <div class="col col-md-6 sectionCA">
+                        <h3>Personnal Information:</h3>
+                        <div class="box-sectionC">
+
+                            <div class="row">
+                                <div class="col col-md-3">
+                                    <div class="row heading">
+                                        First Name
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.fname }}
+                                    </div>
+                                </div>
+                                <div class="col col-md-3">
+                                    <div class="row heading">
+                                        Last Name
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.lname }}
+                                    </div>
+                                </div>
+                                <div class="col col-md-4">
+                                    <div class="row heading">
+                                        Mobile
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.mobile }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-4">
+                                    <div class="row heading">
+                                        CNIC
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.cnic }}
+                                    </div>
+                                </div>
+                                <div class="col col-md-6">
+                                    <div class="row heading">
+                                        Email
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.email }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-10">
+                                    <div class="row heading">
+                                        Address
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.housestreet }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-3">
+                                    <div class="row heading">
+                                        City
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.city }}
+                                    </div>
+                                </div>
+                                <div class="col col-md-3">
+                                    <div class="row heading">
+                                        Country
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.country }}
+                                    </div>
+                                </div>
+                                <div class="col col-md-4">
+                                    <div class="row heading">
+                                        Date Of Birth
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.dob }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-5">
+                                    <div class="row heading">
+                                        Basic Salary
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.salary }}/- pkr
+                                    </div>
+                                </div>
+                                <div class="col col-md-5">
+                                    <div class="row heading">
+                                        Department
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.department }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-10">
+                                    <div class="row heading">
+                                        Designation / Post
+                                    </div>
+                                    <div class="row info">
+                                        {{ form.designation }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-10">
+                                    <button class="btn btn-primary">Update</button>
+                                    <button class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col col-md-4 sectionCB">
+
+                        <div class="row ImageContainer">
+                            {{ form.profile_pic }}
+                        </div>
+                        <hr>
+                        <br>
+                        <h3>Attendance Count</h3>
+                        <p style="font-size: 10px;"> - </p>
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <div class="row heading">
+                                    Presents
+                                </div>
+                                <div class="row info">
+
+                                </div>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="row heading">
+                                    Absents
+                                </div>
+                                <div class="row info">
+
+                                </div>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="row heading">
+                                    HalfTime
+                                </div>
+                                <div class="row info">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <div class="row heading">
+                                    Leaves
+                                </div>
+                                <div class="row info">
+
+                                </div>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="row heading">
+                                    Advance
+                                </div>
+                                <div class="row info">
+                                    30
+                                </div>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="row heading">
+                                    &nbsp; Salary
+                                </div>
+                                <div class="row info" style="margin-left: -28px !important;">
+                                     /-pkr
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-md-12">
+                                <button class="btn btn-success" type="submit">Print</button>
+                                <a>&nbsp;</a>
+                                <button class="btn btn-info">Report</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row insideSectionC">
+                    <div class="col col-md-10 sectionCD">
+                        <table class="table">
+                            <tr class="heading">
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                                <th><h3>Attendances</h3></th>
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Date Time</th>
+                                <th>Month</th>
+                                <th>Status</th>
+                                <th>Update / Delete</th>
+                            </tr>
+                            <tbody>
+                            {% for attendance in attendances %}
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a
+                                            class="fa fa-trash-alt"></a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <!-- End Body -->
+{% endblock %}

@@ -1,0 +1,350 @@
+::-webkit-scrollbar {
+    width:1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00A8CC;
+    border-radius: 10px;
+}
+
+.fa-pencil-alt {
+    color: dodgerblue;
+    text-decoration: none;
+}
+.fa-trash-alt {
+    color: red;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(0deg, rgba(34, 48, 70, 0.8), rgba(14, 28, 50, 0.8)), url("../images/treeOne.jpg");
+    background-attachment:fixed;
+    overflow-x: hidden;
+    color: white;
+}
+
+.nav {
+    border-right: 2px solid #fff;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    height: 100vh;
+    position: fixed;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(34, 48, 70, 0.8), rgba(14, 28, 50, 0.8)), url("../images/treeOne.jpg");
+}
+body .nav .row {
+    border: 3px solid transparent;
+    text-decoration: none;
+}
+
+body .nav .row a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #00A8CC;
+    color: #00A8CC;
+    font-weight: bolder;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+body .nav .row a:hover, body .nav .row .active {
+    background: #00A8CC;
+    color: white;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.fa {
+    text-decoration: none;
+}
+
+.skyblue {
+    color:white;
+    transition: .5s;
+}
+
+.skyblue:hover {
+    background-color: #00A8CC;
+    transition: .3s;
+}
+
+
+
+
+.body {
+    margin-left: 16%;
+}
+
+.body .footer {
+    background: rgba(14, 28, 50, 0.9);
+    position:fixed;
+    left:16%;
+    right:0;
+    padding-top: 10px;
+    bottom:0%;
+}
+.body .footer .left {
+    float:left;
+    padding-left:20px;
+}
+.body .footer .right {
+    float:right;
+    padding-right: 30px;
+}
+
+.body .footer a {
+    color: #fff;
+    text-decoration:none;
+}
+
+nav {
+    padding: 20px;
+    background:rgba(14, 28, 50, 0.7);
+}
+
+nav .BrandName {
+    padding-left:20px;
+}
+
+nav .topNav {
+    margin-top: 15px;
+}
+
+nav form .form-control {
+    background: transparent;
+    border:none;
+    color: #fff;
+    margin-top: -15px;
+    border-bottom: 2px solid #fff;
+}
+nav form .form-control:active, nav form .form-control:focus {
+    background: transparent;
+    border: transparent;
+    color: #fff;
+    border-bottom: 2px solid #00A8CC;
+}
+
+
+nav form .fa-search {
+    color: #fff;
+    border:none;
+    background-color: transparent;
+    transition: .5s;
+}
+nav form .fa-search:hover {
+    color: #00A8CC;
+    transition: .3s;
+}
+
+nav .topNav .fa-user, nav .topNav .fa-bell {
+    color: #fff;
+    transition: .5s;
+}
+nav .topNav .fa-user:hover, nav .topNav .fa-bell:hover {
+    color: #00A8CC;
+    transition: .3s;
+}
+
+.ul {
+    width: 10%;
+    height: 0px;
+    background: #171f24;
+    position: absolute;
+    text-align:center;
+    border-radius: 3px;
+    transition: .5s;
+    top: 10%;
+    right: 20px;
+    overflow:hidden;
+    z-index: 1;
+}
+.ul li {
+    padding: 10px;
+    list-style-type: none;
+    transition: .5s;
+}
+
+.ul li a {
+    font-weight: bold;
+    transition: .6s;
+}
+
+.ul li a:hover, .ul li:hover {
+    background: #00A8CC;
+    transition: .2s;
+}
+
+.body .PageName {
+    padding-left: 20px;
+    text-decoration: underline;;
+}
+
+.body .section, .body .sectionB {
+    margin-top: 10px;
+    background: linear-gradient(0deg, rgba(14, 28, 50, 0.6), rgba(14, 28, 50, 0.6)), url("../images/treeOne.jpg");
+    background-attachment: fixed;
+}
+
+.body .row .row {
+    margin-left: 1px;
+}
+
+.body .row .row .row .col {
+    margin: 0px;
+    border: 10px solid transparent;
+}
+
+.body .row .row .row .col h3 {
+    background: #3700b3;
+    padding: 20px;
+    margin-bottom: -1px;
+}
+.body .section .row .row .col div {
+    margin-top: -1px;
+    padding: 20px;
+    background: #142850;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body .section .row .row .col-md-3 div a .fa, .body .section .row .row .col-md-4 div a .fa {
+    padding-right:20px;
+}
+.body .section .row .row .col-md-3 div a, .body .section .row .row .col-md-4 div a {
+    color: white;
+    text-decoration: none;
+    font-weight:bold;
+}
+.body .section .row .row .col-md-3 div a:hover, .body .section .row .row .col-md-4 div a:hover {
+    color: #00A8CC;
+    text-decoration: none;
+}
+.body .section .row .row .col-md-3 div:hover, .body .section .row .row .col-md-4 div:hover {
+    background: #142340;
+}
+
+
+.body .section .row .lastSection .col table {
+    text-align:center;
+}
+
+.body .section .row .lastSection .col table, .body .section .row .lastSection .col table tr, .body .section .row .lastSection .col table tr th, .body .section .row .lastSection .col table tbody tr td {
+    padding: 20px !important;
+}
+
+.body .section .row .lastSection .col table tr {
+    color: #fff;
+}
+.body .section .row .lastSection .col table tr:hover {
+    background: #142340;
+}
+
+.body .section .row .lastSection .col table a {
+    color: #fff;
+    text-decoration: none;
+}
+.body .section .row .lastSection .col table a:hover {
+    color: #00A8CC;
+}
+
+
+/* Another Part */
+.sectionB div {
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.sectionB div div .bg-special-dark {
+    background: rgba(14, 28, 50, 0.7);
+    color: #fff;
+}
+.sectionB div .bg-special-dark .heading-table {
+    text-align:center !important;
+    font-size: 30px;
+    border-bottom:none;
+    background:rgba(164, 43, 36, 0.2);
+}
+
+.sectionB div row .mid-table a {
+    text-decoration: none;
+}
+
+.sectionB div div .bg-special-dark tr th, .sectionB div div .bg-special-dark tr td {
+    padding: 20px;
+}
+
+.section div .bg-special-dark tr td .fa-pencil-alt {
+    color:dodgerblue;
+    text-decoration: none;
+}
+.section div .bg-special-dark tr td .fa-trash-alt {
+    color:red;
+    text-decoration: none;
+}
+
+
+/* Another Part */
+.sectionC div {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.sectionC div .insideSectionC .col {
+    margin: 30px;
+}
+.sectionC div .insideSectionC .sectionCA, .sectionC div .insideSectionC .sectionCB {
+    background:rgba(14, 28, 50, 0.6);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.sectionC div .insideSectionC .col-md-6 .row .col .heading {
+    font-weight: bold;
+}
+.sectionC div .insideSectionC .col-md-6 .row .col .info {
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sectionC div .insideSectionC .col-md-4 {
+    text-align: center !important;
+}
+.sectionC div .insideSectionC .col-md-4 .ImageContainer {
+    width: 100%;
+    height: auto;
+}
+.sectionC div .insideSectionC .col-md-4 .ImageContainer img {
+    border-radius: 100%;
+    transition: .5s;
+}
+.sectionC div .insideSectionC .col-md-4 .ImageContainer img:hover {
+    opacity: 0.7;
+    transition: .3s;
+}
+
+.sectionC div .insideSectionC .col-md-4 .row .col {
+    text-align: center !important;
+}
+.sectionC div .insideSectionC .col-md-4 .row .col .info {
+    text-align: center;
+    padding-left:18px;
+}
+
+
+.sectionC div .insideSectionC .sectionCD table .heading {
+    text-align: center;
+    background: rgba(164, 43, 36, 0.6) !important;
+}
+
+.sectionC div .insideSectionC .sectionCD table {
+    text-align: center;
+    color: #fff;
+}
+.sectionC div .insideSectionC .sectionCD table tr th, .sectionC div .insideSectionC .sectionCD table tr td {
+    padding: 20px;
+    background: rgba(14, 28, 50, 0.6);
+}

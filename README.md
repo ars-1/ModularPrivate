@@ -26,13 +26,13 @@ Management software for Internet Service Providers
 
 <br>
 
-![Screenshot2](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(2).png)
+![Screenshot2](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot2.png)
 <br>
-![Screenshot3](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(3).png)
+![Screenshot3](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot3.png)
 <br>
-![Screenshot4](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(4).png)
+![Screenshot4](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot4.png)
 <br>
-![Screenshot5](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(5).png)
+![Screenshot5](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot5.png)
 <br>
-![Screenshot6](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(6).png)
+![Screenshot6](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot6.png)
 <!-- vvfawok-2303 -->

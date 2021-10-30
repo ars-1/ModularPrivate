@@ -1,4 +1,3 @@
-![Screenshot (1)](https://user-images.githubusercontent.com/56891476/139539499-4b42fb48-cbac-4db8-9b32-433204ff6374.png)
 <!-- Created By TekHouseInc, copyrights are claimed -->
 
 # Modular
@@ -35,4 +34,26 @@ Management software for Internet Service Providers
 ![Screenshot5](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot5.png)
 <br>
 ![Screenshot6](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot6.png)
+<br>
+<br>
+<br>
+
+## Installation And Running
+* ### First clone it via git or download zip files >> for cloning : git clone https://github.com/ars-1/ModularPrivate.git <<.
+* ### Activate virtual environment via cmd >> c:\users\username\ModularPrivate\Modular> venv\Scripts\activate.bat << or create virtualenv and install >> pip install -r requirements.txt.
+* ### Open settings.py in ModularPrivate/Modular/Modular and paste secret key inside single quotes, if you don't know any secret key there are bunch of them pasted in ModularPrivate\Modular\secretkeys.txt, choose one and paste it there.
+* ### Now run >> py manage.py makemigrations && py manage.py migrate
+* ### Then run >> py manage.py runserver << or >> py manage.py runserver 0.0.0.0:8000 << for different port or IP address rather then running on localhost.
+* ### Open browser and type your computer's IP:8000 or http://127.0.0.1:8000/
+* Username >> admin
+* password >> password
+
+<br>
+<br>
+
+## Other Info
+* Looking for a demo? Visit : https://tekhousedemos.netlify.app or email me directly
+
 <!-- vvfawok-2303 -->
+
+#### Created By ars-1

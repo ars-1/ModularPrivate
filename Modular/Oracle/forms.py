@@ -48,4 +48,9 @@ class BillingForm(ModelForm):
             'datestamp': widgets.DateTimeInput(attrs={'type': 'datetime-local'})
         }
 
+class DueForm(ModelForm):
+    class Meta:
+        model = Client
+        fields = ['due']
+
 

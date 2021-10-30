@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fontawesome-free-5.15.4-web/css/all.css' %}">
+</head>
+<script type="text/javascript" src="{% static 'assets/fontawesome-free-5.15.4-web/js/all.js' %}"></script>
+<body>
+<br><br><br>
+<div class="row">
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-4 card" style="backdrop-filter: blur(8px); background:rgba(200, 200, 200, 0.1);">
+        <div class="card-header" style="text-align: center">
+            <h3>Login</h3>
+        </div>
+        <div class="card-body" style="padding: 60px;">
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="er">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            <label>Username: </label>
+            <br>
+                {{ form.username }}
+            <br>
+            <br>
+            <label>Password: </label>
+            <br>
+                {{ form.password }}
+            <br>
+            <br>
+                <input class="btn btn-primary" type="submit" value="Login">
+                <a class="btn btn-danger" href="{% url 'signup' %}">Signup</a>
+            {{ form.errors|striptags }}
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+</div>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}" async defer></script>
+<script type="text/javascript" src="{% static 'assets/js/charts.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

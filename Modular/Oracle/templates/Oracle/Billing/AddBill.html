@@ -17,11 +17,7 @@
                     {% csrf_token %}
 
                     <label>Client: &nbsp;</label>
-                    <select name="client" id="id_client" disabled>
-                        {% for client in form.client %}
-                            {{ client }}
-                        {% endfor %}
-                    </select>
+                    {{ form.client }}
                     <br><br>
 
                     <label>Monthly Bill:</label>
@@ -37,7 +33,7 @@
                     <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
                     <label>Discount:</label>
                     <br>
-                    <input type="number" name="due" id="id_due" value="0" readonly>
+                    <input type="number" name="due" id="id_due" value="{{ dueForm.due.value }}" readonly>
                     <span>&nbsp; &nbsp;</span>
                     <input type="number" name="discount" id="id_discount" value="0">
                     <br><br>
@@ -52,7 +48,11 @@
 
                     <br><br>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <span>&nbsp;</span>
                     <a href="/oracle/clients/" class="btn btn-danger">Cancel</a>
+                    <span>&nbsp; &nbsp; &nbsp; &nbsp;</span>
+                    <button class="btn btn-secondary" id="funBtn">Calculate</button>
+
 
                 </form>
             </div>
@@ -63,15 +63,20 @@
     </div>
 
     <script>
-        document.body.addEventListener('click', fun);
+        //document.body.addEventListener('click', fun);
+        let btn = document.getElementById('funBtn');
         let Due = document.getElementById('id_due');
         let Bill = document.getElementById('id_bill');
         let BillA = document.getElementById('id_billA');
         let Discount = document.getElementById('id_discount');
+        btn.addEventListener('click', fun);
 
         function fun() {
-            Due.value = Number(Bill.value) - Number(BillA.value) - Number(Discount.value);
+            Due.value = Number(Due.value) - (Number(BillA.value)+Number(Discount.value));
+            btn.removeEventListener('click', fun);
+            btn.disable();
         }
+
     </script>
 
 {% endblock %}

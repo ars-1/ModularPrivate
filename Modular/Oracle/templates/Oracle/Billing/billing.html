@@ -1,0 +1,73 @@
+{% extends 'Core/Base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Start Body -->
+    <div class="row sectionB">
+        <h2 class="PageName">Billing</h2>
+        <div class="col-md-20">
+
+            <div class="row">
+                <div class="col-md-18">
+                    <table class="table bg-special-dark">
+                        <tr class="heading-table">
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th><h2>Billing List</h2></th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <form method="GET">
+                            <tr class="mid-table">
+                                <td>
+                                    <a href="/oracle/addClient/" class="btn btn-info">
+                                        <span class="fa fa-plus"></span>
+                                        &nbsp; Add Client
+                                    </a>
+                                </td>
+                                <td><input name="fname" type="text" style="width: 80px;" id="id_fname"></td>
+                                <td><input name="lname" type="text" style="width: 80px;" id="id_lname"></td>
+                                <td>{{ empFilter.form.mobile }}</td>
+                                <td>{{ empFilter.form.department }}</td>
+                                <td>
+                                    <button class="btn btn-primary">Search</button>
+                                </td>
+                            </tr>
+                        </form>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Name</th>
+                            <th>Package</th>
+                            <th>Bill / Due</th>
+                            <th>Pay/Delete</th>
+                        </tr>
+                        <tbody>
+                        {% for client in clients %}
+                            <tr>
+                                <td>FNC-{{ client.id|stringformat:"04d" }}</td>
+                                <td><a href="client/{{ client.id }}"
+                                       style="text-decoration: none; color: #fff; font-weight: bolder">{{ client.username }}</a>
+                                </td>
+                                <td>{{ client.fname }}</td>
+                                <td>{{ client.package }}</td>
+                                <td>{{ client.bill }} / {{ client.due }}</td>
+                                <td>
+                                    <a href="/oracle/addBill/{{ client.id }}"><span
+                                            class="fa fa-file-invoice-dollar"></span></a>
+                                    &nbsp; &nbsp; &nbsp;
+                                    <a href="/oracle/deleteClient/{{ client.id }}"><span
+                                            class="fa fa-trash-alt"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Body -->
+{% endblock %}

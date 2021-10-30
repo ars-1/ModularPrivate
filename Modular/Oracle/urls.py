@@ -16,6 +16,7 @@ urlpatterns = [
     path('deleteAttendance/<int:pk>', views.DeleteAttendance),
 
     path('clients/', views.ClientL),
+    path('billing/', views.BillingL),
     path('clients/client/<int:pk>', views.ClientDetails),
     path('addClient/', views.AddClient),
     path('updateClient/<int:pk>', views.UpdateClient),

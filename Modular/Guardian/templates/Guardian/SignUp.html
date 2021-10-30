@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>User Registration</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fontawesome-free-5.15.4-web/css/all.css' %}">
+</head>
+<script type="text/javascript" src="{% static 'assets/fontawesome-free-5.15.4-web/js/all.js' %}"></script>
+<body>
+<br><br><br>
+<div class="row">
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-5 card" style="backdrop-filter: blur(8px); background:rgba(200, 200, 200, 0.1);">
+        <div class="card-header" style="text-align: center">
+            <h3>Sign Up Form</h3>
+        </div>
+        <div class="card-body" style="padding: 50px;">
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="btn-danger">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+                <label>Username: </label>
+                <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <label>First Name: </label>
+                <br>
+                {{ form.username }}
+                <span>&nbsp; &nbsp; &nbsp;</span>
+                {{ form.first_name }}
+                <br><br>
+                <label>Last Name: </label>
+                <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <label>Email: </label>
+                <br>
+                {{ form.last_name }}
+                <span>&nbsp; &nbsp; &nbsp;</span>
+                {{ form.email }}
+                <br><br>
+                <label>Password: </label>
+                <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <label>Password Confirm: </label>
+                <br>
+                {{ form.password1 }}
+                <span>&nbsp; &nbsp; &nbsp;</span>
+                {{ form.password2 }}
+                <br><br>
+                <input class="btn btn-primary" type="submit" value="Submit">
+                <a class="btn btn-danger" href="{% url 'login' %}">Login</a>
+            <br><br>
+                    <p class="bg-danger" style="padding: 10px 20px 10px 20px">{{ form.errors|striptags }}</p>
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <span class="btn-danger" {% if message.tags %} class="{{ message.tags }}" {% endif %}></span>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-3">
+    </div>
+</div>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}" async defer></script>
+<script type="text/javascript" src="{% static 'assets/js/charts.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+</html>

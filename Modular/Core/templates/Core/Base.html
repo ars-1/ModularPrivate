@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard</title>
+    <link rel="icon" href="{% static 'assets/images/TKL2.png' %}">
+    <title>ISP - Management</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
@@ -36,6 +37,7 @@
                 <div class="row">
                     <nav>
                         <h1 style="float:left;" class="BrandName">
+                            <img src="{% static 'assets/images/TKL.png' %}" width="100px">
                             TekHouse
                         </h1>
                         <div style="float:right;display:flex;" class="topNav">
@@ -57,8 +59,8 @@
                             <a href="#" onclick="toggleThree()" class="fa fa-user">
                             </a>
                             <div class="ul" id="ThreeData">
-                                <li><a>UserName</a></li>
-                                <li><a>Logout</a></li>
+                                <li><a>{{ request.user }}</a></li>
+                                <li><a class="btn-outline-info" style="text-decoration: none" href="/guardian/logout/">Logout</a></li>
                             </div>
                         </div>
                     </nav>

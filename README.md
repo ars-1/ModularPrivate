@@ -19,7 +19,7 @@ Management software for Internet Service Providers
 
 ## Screenshots
 <hr>
-![Screenshot1](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(1).png)
+![Screenshot1](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot.png)
 <br>
 ![Screenshot2](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(2).png)
 <br>

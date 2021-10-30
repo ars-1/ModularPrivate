@@ -18,10 +18,10 @@ Management software for Internet Service Providers
 
 ## Screenshots
 <hr>
-![Screenshot1](https://github.com/ars-1/ModularPrivate/imgs/Screenshot (1).png 'Dashboard')
-![Screenshot2](https://github.com/ars-1/ModularPrivate/imgs/Screenshot (2).png 'Dashboard')
-![Screenshot3](https://github.com/ars-1/ModularPrivate/imgs/Screenshot (3).png 'Dashboard')
-![Screenshot4](https://github.com/ars-1/ModularPrivate/imgs/Screenshot (4).png 'Employees')
-![Screenshot5](https://github.com/ars-1/ModularPrivate/imgs/Screenshot (5).png 'Employee')
-![Screenshot6](https://github.com/ars-1/ModularPrivate/imgs/Screenshot (6).png 'Clients')
+![Screenshot1](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(1).png 'Dashboard')
+![Screenshot2](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(2).png 'Dashboard')
+![Screenshot3](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(3).png 'Dashboard')
+![Screenshot4](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(4).png 'Employees')
+![Screenshot5](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(5).png 'Employee')
+![Screenshot6](https://github.com/ars-1/ModularPrivate/blob/master/imgs/Screenshot%20(6).png 'Clients')
 <!-- vvfawok-2303 -->

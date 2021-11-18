@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from Guardian.views import *
 from .models import *
+from Guardian.decorators import admin_only
 import datetime
 from django.utils import timezone as tz
 from Core.filters import *
@@ -12,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def Employees(request):
     employees = Employee.objects.all()
     attendances = Attendance.objects.all()
@@ -32,6 +34,7 @@ def Employees(request):
 def EmployeeDetails(request, pk):
     employee = Employee.objects.get(id=pk)
     attendances = Attendance.objects.filter(employee__id__contains=pk)
+    tasks = Task.objects.filter(employee__id__contains=pk)[::-1]
     d = tz.now() - datetime.timedelta(days=30)
     d2 = tz.now() + datetime.timedelta(days=1)
 
@@ -63,6 +66,7 @@ def EmployeeDetails(request, pk):
     context = {
         'employee': employee,
         'attendances': attendances,
+        'tasks': tasks,
         'fromd': d,
         'tod': d2,
 
@@ -76,6 +80,7 @@ def EmployeeDetails(request, pk):
     return render(request, 'Oracle/Employee/EmployeeDetails.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def AddEmployee(request):
     form = AddEmployeeForm()
     if request.method == 'POST':
@@ -96,6 +101,7 @@ def UpdateEmployee(request, pk):
     form = AddEmployeeForm(instance=employee)
     if request.method == 'POST':
         form = AddEmployeeForm(request.POST, request.FILES, instance=employee)
+        print(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/oracle/employees/')
@@ -106,6 +112,7 @@ def UpdateEmployee(request, pk):
     return render(request, 'Oracle/Employee/UpdateEmployee.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def DeleteEmployee(request, pk):
     employee = Employee.objects.get(id=pk)
     if request.method == 'POST':
@@ -119,6 +126,7 @@ def DeleteEmployee(request, pk):
 #######################################################################################################################
 #######################################################################################################################
 @login_required(login_url='/guardian/login/')
+@admin_only
 def AddAttendance(request):
     form = AttendanceForm()
     if request.method == 'POST':
@@ -132,6 +140,7 @@ def AddAttendance(request):
     return render(request, 'Oracle/Employee/AddAttendance.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def UpdateAttendance(request, pk):
     attendance = Attendance.objects.get(id=pk)
     form = AttendanceForm(instance=attendance)
@@ -146,6 +155,7 @@ def UpdateAttendance(request, pk):
     return render(request, 'Oracle/Employee/UpdateAttendance.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def DeleteAttendance(request, pk):
     attendance = Attendance.objects.get(id=pk)
     if request.method == 'POST':
@@ -159,6 +169,7 @@ def DeleteAttendance(request, pk):
 #######################################################################################################################
 #######################################################################################################################
 @login_required(login_url='/guardian/login/')
+@admin_only
 def AddDesignation(request):
     form = DesignationForm()
     if request.method == 'POST':
@@ -170,7 +181,9 @@ def AddDesignation(request):
         'form': form,
     }
     return render(request, 'Oracle/Employee/AddDesignation.html', context)
+
 @login_required(login_url='/guardian/login/')
+@admin_only
 def AddDepartment(request):
     form = DepartmentForm()
     if request.method == 'POST':

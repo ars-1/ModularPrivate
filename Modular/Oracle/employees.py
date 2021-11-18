@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
 
 #######################################################################################################################
 #######################################################################################################################
@@ -25,21 +26,22 @@ class Department(models.Model):
 class Employee(models.Model):
 
     # Personnal Info:
-    fname = models.CharField(max_length=100, null=True)
-    lname = models.CharField(max_length=100, null=True)
-    mobile = models.CharField(max_length=100, null=True)
-    dob = models.DateField(null=True)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    fname = models.CharField(max_length=100, null=True, blank=True, default="None")
+    lname = models.CharField(max_length=100, null=True, blank=True, default="None")
+    mobile = models.CharField(max_length=100, null=True, blank=True, default="None")
+    dob = models.DateField(null=True, blank=True, default=datetime.datetime.now)
     cnic = models.CharField(default=00000-0000000-0, max_length=16)
-    housestreet = models.CharField(max_length=100, null=True)
-    city = models.CharField(max_length=100, null=True)
-    country = models.CharField(max_length=100, null=True)
+    housestreet = models.CharField(max_length=100, null=True, blank=True, default="None")
+    city = models.CharField(max_length=100, null=True, blank=True, default="None")
+    country = models.CharField(max_length=100, null=True, blank=True, default="None")
 
     # For Comapny:
-    profile_pic = models.ImageField(upload_to="profiles", null=True)
-    salary = models.IntegerField(null=True)
-    email = models.CharField(max_length=100, null=True)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True)
-    designation = models.ManyToManyField(Designation)
+    profile_pic = models.ImageField(upload_to="profiles", null=True, blank=True, default="fault.jpg")
+    salary = models.IntegerField(null=True, blank=True, default=0)
+    email = models.CharField(max_length=100, null=True, blank=True, default="None")
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True, blank=True)
+    designation = models.ManyToManyField(Designation, blank=True)
     joining = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):

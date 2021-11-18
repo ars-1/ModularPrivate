@@ -6,10 +6,12 @@ from Core.filters import *
 from .forms import *
 from .employeeViews import *
 from django.contrib.auth.decorators import login_required
+from Guardian.decorators import admin_only
 
 
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def ClientL(request):
     clients = Client.objects.all()
     billings = Billing.objects.all()
@@ -20,6 +22,7 @@ def ClientL(request):
     return render(request, 'Oracle/Billing/clients.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def BillingL(request):
     clients = Client.objects.all()
     context = {
@@ -38,6 +41,7 @@ def ClientDetails(request, pk):
     return render(request, 'Oracle/Billing/ClientDetails.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def AddClient(request):
     form = ClientForm()
     if request.method == 'POST':
@@ -51,6 +55,7 @@ def AddClient(request):
     return render(request, 'Oracle/Billing/AddClient.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def UpdateClient(request, pk):
     client = Client.objects.get(id=pk)
     form = ClientForm(instance=client)
@@ -65,6 +70,7 @@ def UpdateClient(request, pk):
     return render(request, 'Oracle/Billing/UpdateClient.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def DeleteClient(request, pk):
     client = Client.objects.get(id=pk)
     if request.method == 'POST':
@@ -86,6 +92,7 @@ def BillDetails(request, pk):
     return render(request, 'Oracle/Billing/BillDetails.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def AddBill(request, pk):
     client = Client.objects.get(id=pk)
     form = BillingForm(initial={'client': client.username})
@@ -105,6 +112,7 @@ def AddBill(request, pk):
     return render(request, 'Oracle/Billing/AddBill.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def UpdateBill(request, pk):
     bill = Billing.objects.get(id=pk)
     form = BillingForm(instance=bill)
@@ -119,6 +127,7 @@ def UpdateBill(request, pk):
     return render(request, 'Oracle/Billing/UpdateBill.html', context)
 
 @login_required(login_url='/guardian/login/')
+@admin_only
 def DeleteBill(request, pk):
     bill = Billing.objects.get(id=pk)
     if request.method == 'POST':

@@ -9,6 +9,7 @@ class AddEmployeeForm(ModelForm):
     class Meta:
         model = Employee
         fields = '__all__'
+        exclude = ['user']
         widgets = {
             'dob': widgets.DateTimeInput(attrs={'type': 'datetime-local'})
         }

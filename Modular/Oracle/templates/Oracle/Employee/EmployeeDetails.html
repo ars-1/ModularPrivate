@@ -202,7 +202,7 @@
             </div>
 
             <div class="row insideSectionC">
-                <div class="col col-md-10 sectionCD">
+                <div class="col col-md-7 sectionCD">
                     <table class="table">
                         <tr class="heading">
                             <th>&nbsp;</th>
@@ -228,13 +228,54 @@
                                 <td>{{ attendance.datestamp }}</td>
                                 <td>{{ attendance.month }}</td>
                                 <td>{{ attendance.status }}</td>
-                                <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a
-                                        class="fa fa-trash-alt"></a></td>
+                                {% if request.user.is_staff %}
+                                <td>
+                                    <a href="/oracle/updateAttendance/{{ attendance.id }}"><span class="fa fa-pencil-alt"></span></a>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <a href="/oracle/deleteAttendance/{{ attendance.id }}"><span class="fa fa-trash-alt"></span></a>
+                                </td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                         </tbody>
                     </table>
                 </div>
+
+                <div class="col col-md-3 sectionCD">
+                    <table>
+                        <tr class="heading">
+                            <th>&nbsp;</th>
+                            <th><h3>Tasks</h3></th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <th>Task</th>
+                            <th>Status</th>
+                            <th>Time</th>
+                            <th>Update</th>
+                        </tr>
+                        {% for task in tasks %}
+                        <tr>
+                            <td>{{ task.title }}</td>
+                            <td>
+                                {% if task.status.title == 'Completed' %}
+                                <span class="fa fa-check-circle" style="color: #00FF00; filter:drop-shadow(0px 0px 10px #00ff00)"></span>
+                                {% elif task.status.title == 'Pending' %}
+                                <span class="fa fa-check-circle" style="color: red; filter:drop-shadow(0px 0px 10px red)"></span>
+                                {% elif task.status.title == 'Assigned' %}
+                                <span class="fa fa-check-circle" style="color: yellow; filter:drop-shadow(0px 0px 10px yellow)"></span>
+                                {% endif %}
+                            </td>
+                            <td>{{ task.datestamp }}</td>
+                            <td>
+                                <a href="/oracle/updateTask/{{ task.id }}"><span class="fa fa-pencil-alt"></span></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
             </div>
 
         </div>

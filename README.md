@@ -6,9 +6,11 @@ Management software for Internet Service Providers
 
 ## Current Features
 * AMS
-  * Attendance Management System for employees which calculates salary as well
+  * Attendance Management System for employees which calculates salary as well.
 * Billing and Client List
-  * It provides the list of clients and their bill amount, package info and their dues
+  * It provides the list of clients and their bill amount, package info and their dues.
+* Task Assigner
+  * Assign a specific task to one of your employees and watch it's status.
 
 <br>
 
@@ -46,8 +48,8 @@ Management software for Internet Service Providers
 * Activate virtual environment via cmd >> c:\users\username\ModularPrivate\Modular> venv\Scripts\activate.bat << or create virtualenv and install >> pip install -r requirements.txt.
 * Open settings.py in ModularPrivate/Modular/Modular and paste secret key inside single quotes, if you don't know any secret key there are bunch of them pasted in ModularPrivate\Modular\secretkeys.txt, choose one and paste it there.
 * Now run >> py manage.py makemigrations && py manage.py migrate
-* Then run >> py manage.py runserver << or >> py manage.py runserver 0.0.0.0:8000 << for different port or IP address rather then running on localhost.
-* Open browser and type your computer's IP:8000 or http://127.0.0.1:8000/
+* Then run >> py manage.py runserver << or >> py manage.py runserver 0.0.0.0:port << for different port or IP address rather then running on localhost.
+* Open browser and type your computer's IP:port or http://127.0.0.1:8000/
 * Username >> admin
 * password >> password
 

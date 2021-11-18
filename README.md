@@ -6,9 +6,11 @@ Management software for Internet Service Providers
 
 ## Current Features
 * AMS
-  * Attendance Management System for employees which calculates salary as well
+  * Attendance Management System for employees which calculates salary as well.
 * Billing and Client List
-  * It provides the list of clients and their bill amount, package info and their dues
+  * It provides the list of clients and their bill amount, package info and their dues.
+* Task Assigner
+  * Assign a specific task to one of your employees and watch it's status.
 
 <br>
 

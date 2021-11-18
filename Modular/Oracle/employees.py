@@ -28,7 +28,7 @@ class Employee(models.Model):
     fname = models.CharField(max_length=100, null=True)
     lname = models.CharField(max_length=100, null=True)
     mobile = models.CharField(max_length=100, null=True)
-    dob = models.DateTimeField(null=True)
+    dob = models.DateField(null=True)
     cnic = models.CharField(default=00000-0000000-0, max_length=16)
     housestreet = models.CharField(max_length=100, null=True)
     city = models.CharField(max_length=100, null=True)

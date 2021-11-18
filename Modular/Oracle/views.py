@@ -6,6 +6,7 @@ from Core.filters import *
 from .forms import *
 from .employeeViews import *
 from .billingViews import *
+from .taskViews import *
 
 # Create your views here.
 

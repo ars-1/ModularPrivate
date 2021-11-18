@@ -1,0 +1,81 @@
+{% extends 'Core/Base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Start Body -->
+    <div class="row sectionB">
+        <h2 class="PageName">Task Assigner</h2>
+        <div class="col-md-20">
+
+            <div class="row">
+                <div class="col-md-18">
+                    <table class="table bg-special-dark">
+                        <tr class="heading-table">
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th><h2>Tasks List</h2></th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <form method="GET">
+                            <tr class="mid-table">
+                                <td>
+                                    <a href="/oracle/addTask/" class="btn btn-info">
+                                        <span class="fa fa-plus"></span>
+                                        &nbsp; Add Task
+                                    </a>
+                                </td>
+                                <td><input name="fname" type="text" style="width: 80px;" id="id_fname"></td>
+                                <td><input name="lname" type="text" style="width: 80px;" id="id_lname"></td>
+                                <td>{{ empFilter.form.mobile }}</td>
+                                <td>{{ empFilter.form.department }}</td>
+                                <td>
+                                    <button class="btn btn-primary">Search</button>
+                                </td>
+                            </tr>
+                        </form>
+                        <tr>
+                            <th>ID</th>
+                            <th>Task</th>
+                            <th>Assigned To</th>
+                            <th>Status</th>
+                            <th>Department</th>
+                            <th>Update/Delete</th>
+                        </tr>
+                        <tbody>
+                        {% for task in tasks %}
+                            <tr>
+                                <td>FN-{{ task.id|stringformat:"04d" }}</td>
+                                <td><a href="#"
+                                       style="text-decoration: none; color: #fff; font-weight: bolder">{{ task.title }}</a>
+                                </td>
+                                <td>{{ task.employee.fname }}</td>
+                                <td>{{ task.status }}
+                                    {% if task.status.title == 'Completed' %}
+                                    <span class="fa fa-check-circle" style="color: #00FF00; filter:drop-shadow(0px 0px 10px #00ff00)"></span>
+                                    {% elif task.status.title == 'Pending' %}
+                                    <span class="fa fa-check-circle" style="color: red; filter:drop-shadow(0px 0px 10px red)"></span>
+                                    {% elif task.status.title == 'Assigned' %}
+                                    <span class="fa fa-check-circle" style="color: yellow; filter:drop-shadow(0px 0px 10px yellow)"></span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ task.datestamp }}</td>
+                                <td>
+                                    <a href="/oracle/updateTask/{{ task.id }}"><span
+                                            class="fa fa-pencil-alt"></span></a>
+                                    &nbsp; &nbsp; &nbsp;
+                                    <a href="/oracle/deleteTask/{{ task.id }}"><span
+                                            class="fa fa-trash-alt"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Body -->
+{% endblock %}

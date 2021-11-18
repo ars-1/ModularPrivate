@@ -58,30 +58,14 @@
                             <th>Status</th>
                         </tr>
                         <tbody>
+                            {% for attendance in attendances %}
                         <tr>
-                            <td>FN-0001</td>
-                            <td>Khan</td>
-                            <td>4:33pm</td>
-                            <td>Present</td>
+                            <td>{{ attendance.employee.id|stringformat:"04d" }}</td>
+                            <td>{{ attendance.employee.fname }}</td>
+                            <td>{{ attendance.datestamp }}</td>
+                            <td>{{ attendance.status }}</td>
                         </tr>
-                        <tr>
-                            <td>FN-0001</td>
-                            <td>Asad</td>
-                            <td>4:33pm</td>
-                            <td>Present</td>
-                        </tr>
-                        <tr>
-                            <td>FN-0001</td>
-                            <td>Shahzain</td>
-                            <td>4:33pm</td>
-                            <td>Present</td>
-                        </tr>
-                        <tr>
-                            <td>FN-0001</td>
-                            <td>Farooq</td>
-                            <td>4:33pm</td>
-                            <td>Present</td>
-                        </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -97,38 +81,24 @@
                             <th>Update/Delete</th>
                         </tr>
                         <tbody>
+                            {% for task in tasks %}
                         <tr>
-                            <td>TK-0346</td>
-                            <td>Collect Bill</td>
-                            <td>Khan</td>
-                            <td><input type="checkbox"></td>
+                            <td>TK-{{ task.id|stringformat:"04d" }}</td>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.employee.fname }}</td>
+                            <td>{{ task.status }}
+                                {% if task.status.title == 'Completed' %}
+                                <span class="fa fa-check-circle" style="color: #00FF00; filter:drop-shadow(0px 0px 10px #00ff00)"></span>
+                                {% elif task.status.title == 'Pending' %}
+                                <span class="fa fa-check-circle" style="color: red; filter:drop-shadow(0px 0px 10px red)"></span>
+                                {% elif task.status.title == 'Assigned' %}
+                                <span class="fa fa-check-circle" style="color: yellow; filter:drop-shadow(0px 0px 10px yellow)"></span>
+                                {% endif %}
+                            </td>
                             <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
                                     class="fa fa-trash-alt"></a></td>
                         </tr>
-                        <tr>
-                            <td>TK-0346</td>
-                            <td>Collect Bill</td>
-                            <td>Khan</td>
-                            <td><input type="checkbox"></td>
-                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
-                                    class="fa fa-trash-alt"></a></td>
-                        </tr>
-                        <tr>
-                            <td>TK-0346</td>
-                            <td>Collect Bill</td>
-                            <td>Khan</td>
-                            <td><input type="checkbox"></td>
-                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
-                                    class="fa fa-trash-alt"></a></td>
-                        </tr>
-                        <tr>
-                            <td>TK-0346</td>
-                            <td>Collect Bill</td>
-                            <td>Khan</td>
-                            <td><input type="checkbox"></td>
-                            <td><a class="fa fa-pencil-alt"></a>&nbsp; &nbsp; &nbsp;<a
-                                    class="fa fa-trash-alt"></a></td>
-                        </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>

@@ -12,6 +12,10 @@ RegisteredModels = [
     Package,
     Client,
     Billing,
+
+    # Tasks
+    TaskStatus,
+    Task,
 ]
 
 admin.site.register(RegisteredModels)

@@ -26,4 +26,8 @@ urlpatterns = [
     path('billDetails/<int:pk>', views.BillDetails),
     path('deleteBill/<int:pk>', views.DeleteBill),
 
+    path('tasksList/', views.Tasks),
+    path('addTask/', views.addTask),
+    path('updateTask/<int:pk>', views.updateTask),
+    path('deleteTask/<int:pk>', views.deleteTask),
 ]

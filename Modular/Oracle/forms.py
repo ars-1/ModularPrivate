@@ -9,6 +9,9 @@ class AddEmployeeForm(ModelForm):
     class Meta:
         model = Employee
         fields = '__all__'
+        widgets = {
+            'dob': widgets.DateTimeInput(attrs={'type': 'datetime-local'})
+        }
 
 class DesignationForm(ModelForm):
     class Meta:
@@ -30,6 +33,7 @@ class AttendanceForm(ModelForm):
 
 
 #######################################################################################################################
+                                        #               Billing 
 #######################################################################################################################
 
 class ClientForm(ModelForm):
@@ -54,3 +58,15 @@ class DueForm(ModelForm):
         fields = ['due']
 
 
+
+#######################################################################################################################
+                                        #               Tasks
+#######################################################################################################################
+
+class TaskForm(ModelForm):
+    class Meta:
+        model = Task
+        fields = '__all__'
+        widgets = {
+            'datestamp': widgets.DateInput(attrs={'type': 'date'})
+        }

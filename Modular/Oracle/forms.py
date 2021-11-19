@@ -11,7 +11,7 @@ class AddEmployeeForm(ModelForm):
         fields = '__all__'
         exclude = ['user']
         widgets = {
-            'dob': widgets.DateTimeInput(attrs={'type': 'datetime-local'})
+            'dob': widgets.DateInput(attrs={'type': 'date'})
         }
 
 class DesignationForm(ModelForm):

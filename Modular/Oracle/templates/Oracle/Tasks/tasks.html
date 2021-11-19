@@ -40,7 +40,7 @@
                             <th>Task</th>
                             <th>Assigned To</th>
                             <th>Status</th>
-                            <th>Department</th>
+                            <th>Time Assigned</th>
                             <th>Update/Delete</th>
                         </tr>
                         <tbody>
@@ -50,7 +50,7 @@
                                 <td><a href="#"
                                        style="text-decoration: none; color: #fff; font-weight: bolder">{{ task.title }}</a>
                                 </td>
-                                <td><a href="/oracle/employees/employee/{{ task.employee.id }}">{{ task.employee.fname }}</a></td>
+                                <td><a href="/oracle/employees/employee/{{ task.employee.id }}" style="text-decoration: none; color: #fff; font-weight: bolder">{{ task.employee.fname }}</a></td>
                                 <td>{{ task.status }}
                                     {% if task.status.title == 'Completed' %}
                                     <span class="fa fa-check-circle" style="color: #00FF00; filter:drop-shadow(0px 0px 10px #00ff00)"></span>
